@@ -2,6 +2,40 @@
 
 Máster en Bioinformática por la Escuela Técnica Superior de Ingeniería (Universidad de Valencia). Curso Académico 2021-2022. 
 Centro de investigación I2SysBio (Paterna).
+                                                          
+                                             :@@@@'     
+                                           ,@@@@@@@@;   
+                                          +@@@@@@@@@@,  
+                                        .@@@@@@@@@@@@#  
+                                +@#.   '@@@@@@@@@@@@@#  
+                               #@@@@+`@@@@@@@@@@@@@@@,  
+                               '@@@@@@@@@@@@@@@@@@@@'   
+                                :@@@@@@@@@@@@@@@@@@.    
+                                 :@@@@@@@@@@@@@@@+      
+                                #@@@@@@@@@;@@@@@,       
+                              ,@@@#`.@@@@@@#,@#         
+                             +@@@:    +@@@@@@,          
+                           .@@@@       #@@@@@@#         
+                          '@@@;       '@@@@@@@@@        
+                        `@@@@`      `@@@@`:@@@@@        
+                       ;@@@'       ;@@@'    +@+         
+                      @@@@.       @@@@.                 
+                    :@@@#       :@@@#                   
+                   #@@@,       #@@@,                    
+                 ,@@@#`@@'   ,@@@#                      
+                +@@@:'@@@@@:+@@@:                       
+              .@@@@`@@@@@@@@@@@                         
+             '@@@;:@@@@@@@@@@;                          
+            #@@@`#@@@@@@@@@@`                           
+           ,@@@;@@@@@@@@@@+                             
+           #@@@@@@@@@@@@@.                              
+           @@@@@@@@@@@@#                                
+          .@@@@@@@@@@@,                                 
+         +@@@@@@@@@@#                                   
+         @@@@@@#+;.                                     
+          +@@;                                          
+                                                        
+       Let's go !!!                                     
 
 ## Objetivos del trabajo
 
@@ -15,5 +49,5 @@ Para ello, se ha realizado un control de calidad de las muestras, un ensamblaje 
 
 ## Trinity de novo asembly
 ```
-Trinity --seqType fastq --max_memory 750G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
+Trinity --seqType fq --max_memory 10G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
 ```
