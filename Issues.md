@@ -31,4 +31,12 @@ Algunas de las soluciones apuntan a eliminar el canal -forge de conda:
     conda config --add channels conda-forge
 ##No other changes were required to fix this on my system.
 ```
-A mí, personalmente, tampoco parece funcionarme. 
+A mí, personalmente, tampoco parece funcionarme. Hay cierta información sobre el bug en https://github.com/conda/conda/issues/8051. Al menos parece que no solo me pasa a mí! 
+Tras eliminar conda-forge, lo añado de nuevo (aún así, con esto no parece que se le solucione a todo el mundo). 
+```
+conda config --get channels ##para ver mis canales
+conda info ##para ver cosas nose
+```
+
+
+
