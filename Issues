@@ -1,3 +1,0 @@
-Intento organizarme los problemas que voy teniendo (muchísimos). 
-
-Trinity falla tras Inchworm; el problema parece residir en conflictos entre librerías de samtools y openssl. La  versión de openssl que tengo (con conda) 1.11 parece no tener la libreria libcrypto.so.1.0.0 que requiere samtools para su funcionamiento. Al lanzar Trinity, tengo el siguiente error:
