@@ -49,3 +49,10 @@ rm ~/.condarc
 ```
 Parece fallar en Solving enviroment, pero no se queda congelado; parece avanzar más que antes :)
 
+Ha varias personas les ha funcionado cambiar la prioridad del canal a "flexible" mediante:
+````
+conda config --describe channel_priority
+conda config --set channel_priority flexible
+````
+Después de eso, hacer *conda update conda*. 
+
