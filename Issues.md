@@ -37,6 +37,15 @@ Tras eliminar conda-forge, lo añado de nuevo (aún así, con esto no parece que
 conda config --get channels ##para ver mis canales
 conda info ##para ver cosas nose
 ```
+También he probado a updatear conda (?)
+```
+conda update conda
+```
+Sin éxito. 
 
-
+He visto que gente apuntaba a lo de eliminar conda -forge, pero también de la linea de .condarc:
+```
+rm ~/.condarc
+```
+Parece fallar en Solving enviroment, pero no se queda congelado; parece avanzar más que antes :)
 
