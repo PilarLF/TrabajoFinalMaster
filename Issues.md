@@ -55,4 +55,9 @@ conda config --describe channel_priority
 conda config --set channel_priority flexible
 ````
 Después de eso, hacer *conda update conda*. 
+Intento hacerlo creando un enviroment:
+```
+conda create -n env_name python=3.5 anaconda
+```
+
 
