@@ -47,7 +47,16 @@ Idea principal del proyecto: análisis transcriptómico del cuerpo graso de indi
 El objetivo de este repositorio es proporcionar el material suplementario sobre el software y los paquetes usados, incluyendo sus parámetros, usados durante el análisis de RNAseq de individuos de *Blatella germanica*. 
 Para ello, se ha realizado un control de calidad de las muestras, un ensamblaje *de novo* del transcritpoma de Blatella, una cuantificación mediante pseudo-alineador (mediante la terminal de bash) y un análisis de la expresión diferencial y anotación funcional de los transcritos (ejecutado en R, versión 4.1). Los scripts pueden en contrarse en la carpeta ./scripts/ de este repositorio. Se ha tratado de acompañarlos con una breve explicación de cada paso del análisis. 
 
-## Trinity de novo asembly
+## 1. Trinity de novo asembly
 ```
 Trinity --seqType fq --max_memory 10G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
 ```
+
+### (1.1 Ensamblaje con SPAdes)
+Pruebo a lanzar SPAdes para ver cómo arranca. Para ello lanzo:
+````
+spades.py -1 ../../Trinity/reads.ALL.left.fq -2 ../../Trinity/reads.ALL.rigth.fq --careful --cov-cutoff auto -o spades_assembly_all_illumina
+````
+Todos los parámetros usados son los que estaban por defecto cuando he buscado la linea de comandos en su pagina web. 
+
+
