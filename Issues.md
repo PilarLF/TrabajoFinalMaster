@@ -59,5 +59,11 @@ Intento hacerlo creando un enviroment:
 ```
 conda create -n env_name python=3.5 anaconda
 ```
+-------------------------------------------------------------------------
 
+Pruebo a lanzar SPAdes para ver cómo arranca. Para ello lanzo:
+````
+spades.py -1 ../../Trinity/reads.ALL.left.fq -2 ../../Trinity/reads.ALL.rigth.fq --careful --cov-cutoff auto -o spades_assembly_all_illumina
+````
+Todos los parámetros usados son los que estaban por defecto cuando he buscado la linea de comandos en su pagina web. 
 
