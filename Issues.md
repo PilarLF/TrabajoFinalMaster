@@ -66,3 +66,6 @@ Un ser de luz me ha respondido en: https://github.com/bioconda/bioconda-recipes/
  conda create -n my_cool_env -c conda-forge -c bioconda samtools=1.9 openssl=1.0
 ```
 No hay forma de solucionarlo. 
+Más hilos de posibles soluciones:
+
+- https://github.com/merenlab/anvio/issues/1479 
