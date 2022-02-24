@@ -60,3 +60,9 @@ Intento hacerlo creando un enviroment:
 conda create -n env_name python=3.5 anaconda
 ```
 -------------------------------------------------------------------------
+
+Un ser de luz me ha respondido en: https://github.com/bioconda/bioconda-recipes/issues/12100 y me ha dicho que pruebe:
+```
+ conda create -n my_cool_env -c conda-forge -c bioconda samtools=1.9 openssl=1.0
+```
+No hay forma de solucionarlo. 
