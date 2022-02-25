@@ -51,6 +51,14 @@ Para ello, se ha realizado un control de calidad de las muestras, un ensamblaje 
 ```
 Trinity --seqType fq --max_memory 10G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
 ```
+El resultado se recoge en ficheros/Trinity.fasta. 
+
+### 1.1 Assessing transcriptome assembly quality
+Tras obtener el ensamblaje final del transcriptoma, este queda recogido en el fichero Trinity.fasta generado por Trinity (trinity_out_directory). Trinity proporciona el código TrinityStats.pl, con el cual realizar la evaluación del ensamblaje. 
+````
+TrinityStats.pl trinity_out_dir/Trinity.fasta > trinityStats.log
+````
+El resultado se recoge en ficheros/trinityStats.log
 
 ### (1.1 Ensamblaje con SPAdes)
 Pruebo a lanzar SPAdes para ver cómo arranca. Para ello lanzo:
