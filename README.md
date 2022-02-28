@@ -17,15 +17,38 @@ Para ello, se ha realizado un control de calidad de las muestras, un ensamblaje 
 ## 1. Trinity de novo asembly
 ```
 Trinity --seqType fq --max_memory 10G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
+
+#o, de forma más eficiente:
+Trinity --seqType fq --max_memory 100G --left reads.ALL.left.fq.gz --right reads.ALL.right.fq.gz --CPU 32 --trimmomatic
 ```
 El resultado se recoge en ficheros/Trinity.fasta. 
+Muchos de los pasos realizados a continuación se han tomado de: https://southgreenplatform.github.io/trainings/trinityTrinotate/TP-trinity/#practice-2 
 
 ### 1.1 Assessing transcriptome assembly quality
+#### 1.1.1 Getting basic Assembly metrics with trinitystats.pl
 Tras obtener el ensamblaje final del transcriptoma, este queda recogido en el fichero Trinity.fasta generado por Trinity (trinity_out_directory). Trinity proporciona el código TrinityStats.pl, con el cual realizar la evaluación del ensamblaje. 
 ````
 TrinityStats.pl trinity_out_dir/Trinity.fasta > trinityStats.log
 ````
 El resultado se recoge en ficheros/trinityStats.log
+
+#### 1.1.2 Reads mapping back rate and abundance estimation using align_and_estimate_abundance.pl
+A continuación, vamos a mapear nuestras lecturas contra el transcrito recién esnamblado. Un buen ensamblaje debería, normalmente, mapear el 80% de las reads, por lo menos. Para esto Trinity proporciona el script align_and_estimate_abundance.pl. 
+
+````
+# create a salmon_outdir and go on
+mkdir salmon_outdir; cd salmon_outdir
+
+# salmon
+perl $path_to_trinity/util/align_and_estimate_abundance.pl \
+--transcripts $fasta \
+--seqType fq \
+--samples_file $samplesfile \
+--est_method salmon \
+--trinity_mode \
+--prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
+````
+
 
 ### (1.1 Ensamblaje con SPAdes)
 Pruebo a lanzar SPAdes para ver cómo arranca. Para ello lanzo:
