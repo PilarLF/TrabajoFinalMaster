@@ -19,6 +19,8 @@ Para ello, se ha realizado un control de calidad de las muestras, un ensamblaje 
 Trinity --seqType fq --max_memory 10G --left G2r-CG-pool-4_S32.trim.R1.fastq,G2r-CG-pool-3_S31.trim.R1.fastq,G2r-CG-pool-2_S30.trim.R1.fastq,G2r-CG-pool-1_S29.trim.R1.fastq,control-CG-pool-4_S28.trim.R1.fastq,control-CG-pool-3_S27.trim.R1.fastq,control-CG-pool-2_S26.trim.R1.fastq,control-CG-pool-1_S25.trim.R1.fastq --right G2r-CG-pool-4_S32.trim.R2.fastq,G2r-CG-pool-3_S31.trim.R2.fastq,G2r-CG-pool-2_S30.trim.R2.fastq,G2r-CG-pool-1_S29.trim.R2.fastq,control-CG-pool-4_S28.trim.R2.fastq,control-CG-pool-3_S27.trim.R2.fastq,control-CG-pool-2_S26.trim.R2.fastq,control-CG-pool-1_S25.trim.R2.fastq --CPU 32 --trimmomatic --output CG_transcriptome1
 
 #o, de forma más eficiente:
+cat *R1.fastq > reads.ALL.left.fq
+cat *R2.fastq > reads.ALL.rigth.fq
 Trinity --seqType fq --max_memory 100G --left reads.ALL.left.fq.gz --right reads.ALL.right.fq.gz --CPU 32 --trimmomatic
 ```
 El resultado se recoge en ficheros/Trinity.fasta. 
