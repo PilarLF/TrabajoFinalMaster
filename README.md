@@ -35,7 +35,26 @@ TrinityStats.pl trinity_out_dir/Trinity.fasta > trinityStats.log
 El resultado se recoge en ficheros/trinityStats.log
 
 #### 1.1.2 Reads mapping back rate and abundance estimation using align_and_estimate_abundance.pl
-A continuación, vamos a mapear nuestras lecturas contra el transcrito recién esnamblado. Un buen ensamblaje debería, normalmente, mapear el 80% de las reads, por lo menos. Para esto Trinity proporciona el script align_and_estimate_abundance.pl. 
+A continuación, vamos a mapear nuestras lecturas contra el transcrito recién esnamblado. Un buen ensamblaje debería, normalmente, mapear el 80% de las reads (parejadas, entre sí), por lo menos. Para esto Trinity proporciona el script align_and_estimate_abundance.pl. Con Bowtie2, se ha seguido los siguientes pasos:
+
+````
+44071070 reads; of these:
+  44071070 (100.00%) were paired; of these:
+    3080056 (6.99%) aligned concordantly 0 times
+    29199848 (66.26%) aligned concordantly exactly 1 time
+    11791166 (26.75%) aligned concordantly >1 times
+    ----
+    3080056 pairs aligned concordantly 0 times; of these:
+      317887 (10.32%) aligned discordantly 1 time
+    ----
+    2762169 pairs aligned 0 times concordantly or discordantly; of these:
+      5524338 mates make up the pairs; of these:
+        3189471 (57.73%) aligned 0 times
+        1004700 (18.19%) aligned exactly 1 time
+        1330167 (24.08%) aligned >1 times
+96.38% overall alignment rate
+
+````
 
 ````
 # create a salmon_outdir and go on
