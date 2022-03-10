@@ -69,3 +69,9 @@ No hay forma de solucionarlo.
 Más hilos de posibles soluciones:
 
 - https://github.com/merenlab/anvio/issues/1479 
+
+Los issues no han acabado, un mes después. Tras intentar volver a lanzar Trinity, confiada en que no iba a fallar más, volvió a fallar:
+````
+jellyfish: error while loading shared libraries: libhts.so.3: cannot open shared object file: No such file or directory
+````
+¿¿¿POR QUÉ???
