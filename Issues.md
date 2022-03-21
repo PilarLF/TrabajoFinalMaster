@@ -75,3 +75,13 @@ Los issues no han acabado, un mes después. Tras intentar volver a lanzar Trinit
 jellyfish: error while loading shared libraries: libhts.so.3: cannot open shared object file: No such file or directory
 ````
 ¿¿¿POR QUÉ???
+
+Tras (creo) solucionar el problema anterior, me sale un nuevo error parecido a:
+````
+/usr/lib/libstdc++.so.6: version `GLIBCXX_3.4.15' not found
+````
+Se supone que es un error de no encontrar la librería como debería:
+````
+it's not a problem with the OS, it's a problem with users installing software themselves then not using the linker correctly. It's a FAQ: gcc.gnu.org/onlinedocs/libstdc++/faq.html#faq.how_to_set_paths
+````
+
