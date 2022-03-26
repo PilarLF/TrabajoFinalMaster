@@ -69,13 +69,7 @@ perl $path_to_trinity/util/align_and_estimate_abundance.pl \
 --trinity_mode \
 --prep_reference > salmon_align_and_estimate_abundance.log 2>&1 &
 ````
-
-
-### (1.1 Ensamblaje con SPAdes)
-Pruebo a lanzar SPAdes para ver cómo arranca. Para ello lanzo:
-````
-spades.py -1 ../../Trinity/reads.ALL.left.fq -2 ../../Trinity/reads.ALL.rigth.fq --careful --cov-cutoff auto -o spades_assembly_all_illumina
-````
-Todos los parámetros usados son los que estaban por defecto cuando he buscado la linea de comandos en su pagina web. 
+## 2. Obtener el unigene
+Mediante CD-HIT se eliminan las secuencias con un 95% o más de similitud
 
 
